@@ -7,7 +7,7 @@ import gradio as gr
 from utils import encode_img
 
 url = os.environ.get("API_URL")
-url = "http://127.0.0.1:9000/model"
+url = "http://127.0.0.1:2333/model"
 
 
 def inference(img):
@@ -29,6 +29,6 @@ if __name__ == "__main__":
                              title="ResNet50 (demo on local with GPU)"
                              )
     # interface.launch(server_name="0.0.0.0")
-    interface.launch()
+    interface.launch(server_port=7680)
 
 
