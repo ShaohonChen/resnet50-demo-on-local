@@ -27,7 +27,7 @@ if __name__ == "__main__":
                              outputs=gr.Label(),
                              title="ResNet50 (demo on local with GPU)"
                              )
-    # interface.launch(server_name="0.0.0.0")
-    interface.launch(server_port=7680)
+    interface.launch(server_name="0.0.0.0")
+    # interface.launch(server_port=7680)
 
 
