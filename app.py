@@ -7,8 +7,7 @@ import gradio as gr
 from utils import encode_img
 
 url = os.environ.get("API_URL")
-url = "http://127.0.0.1:2333/model"
-
+print(f"MY SERVER:{url}")
 
 def inference(img):
     b64_code = encode_img(img)
