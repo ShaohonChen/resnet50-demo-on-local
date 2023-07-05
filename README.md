@@ -1,5 +1,7 @@
 # resnet50 demo on local
 
+The project demo can be experienced online on [![](https://swanhub.co/git/repo/Paimon%2FSD-majicMIX_realistic_v6/file/preview?ref=main&path=swanhub.svg)](https://swanhub.co/shaohon/resnet50_demo_on_local/demo)
+
 ## Description
 
 This project is a demo of how to deploy a Resnet50 model API using the Flask framework. We can build a model that can be accessed via a web API using Flask. This comes with many benefits, including saving server costs or containing some private data. For example, when you need to build a demo of a deep learning model that requires a GPU using SwanHub, HuggingFace, or Replicate, you can build an API on your local GPU server and access it using the Gradio backend online.
@@ -48,7 +50,7 @@ This project is licensed under the [GPL](https://www.gnu.org/licenses/gpl-3.0.en
 
 ## Author Information
 
-This project is developed by 陈少宏 (shaohon chen).
+This project is developed by shaohon chen.
 
 For any inquiries or feedback, please contact shaohon chen via email: shaohon_chen@115lab.club.
 
