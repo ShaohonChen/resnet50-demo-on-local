@@ -1,31 +1,57 @@
-# Project Name
+# resnet50 demo on local
 
 ## Description
 
-这个项目是一个演示如何借助Flask框架来实现Resnet50模型API部署的一个案例项目。我们可以通过Flask构建一个可以使用Web API访问的模型。这会带来许多好处，包括当你需要使用HuggingFace，Replicate构建一个可以线上演示的深度学习模型demo
+This project is a demo of how to deploy a Resnet50 model API using the Flask framework. We can build a model that can be accessed via a web API using Flask. This comes with many benefits, including saving server costs or containing some private data. For example, when you need to build a demo of a deep learning model that requires a GPU using SwanHub, HuggingFace, or Replicate, you can build an API on your local GPU server and access it using the Gradio backend online.
 
-你可能需要的预备知识：
+Pre-requisites you may need:
 
-**Flask**是一个轻量级的Web框架，它基于Python语言开发。它被广泛用于构建Web应用程序和API，以及进行快速原型开发。
-## Table of Contents
+**Flask** is a lightweight web framework developed in Python. It is widely used to build web applications and APIs, as well as for rapid prototyping.
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+**Docker** is an open-source containerization platform designed to simplify the process of building, deploying, and managing applications. By using container technology, Docker allows developers to package an application and all its dependencies into a standalone, portable container.
 
-## Installation
+## Installation & Usage
 
-[Describe how to install the project dependencies and get the project up and running]
+This project consists of two parts, the model API service and the Gradio frontend rendering service. You can deploy them separately on two different servers (which need to be able to access each other), or you can deploy them on the same server.
 
-## Usage
+The model API server can be run via Docker. Make sure the deployment server has Docker installed. You can refer to [Install Docker](https://docs.docker.com/desktop/) for instructions. Run the following command to start it:
 
-[Provide examples and instructions on how to use the project]
+```
+bash run.sh <API_PORT>
+```
 
-## Contributing
+Replace `<API_PORT>` with the port number for the model API service, ensuring that it is not already in use.
 
-[Explain how others can contribute to the project]
+The Gradio frontend server requires Python >= 3.8 to be installed on the server. Run the following command to install the necessary dependencies:
+
+```
+pip install -r requirements.txt
+```
+
+Alternatively, you can upload this project to SwanHub and choose to run the Gradio-based demo using the environment built from the `requirements.txt` file. Refer to [Getting Started with SwanHub](https://geektechstudio.feishu.cn/wiki/SpdSwReT8iNF5NkfngwciSS6nVf) for a detailed tutorial. You can also deploy it using HuggingFace's Space or Replicate.
+
+Next, run the following command to set the access URL for your model API:
+
+```
+export API_URL=http://<IP or URL>:<API_PORT>/model
+```
+
+Finally, run the following command to start your Gradio service:
+
+```
+python app.py
+```
 
 ## License
 
-[Specify the project license]
+This project is licensed under the [GPL](https://www.gnu.org/licenses/gpl-3.0.en.html) license.
+
+## Author Information
+
+This project is developed by 陈少宏 (shaohon chen).
+
+For any inquiries or feedback, please contact shaohon chen via email: shaohon_chen@115lab.club.
+
+## Thanks
+
+Thanks for [Auto-README](https://swanhub.co/SwanHub/Auto-README/demo) help me write this readme! : )
